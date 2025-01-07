@@ -1,2 +1,2 @@
 # -hydrate-sim-
-an idle game to get water
+an idle game to hydrate
