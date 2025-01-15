@@ -1,8 +1,8 @@
-class waterResoruce {
-    constructor(waterResorucename, baseCps, baseCost, buttonId) {
-        this.waterResorucename = waterResorucename;
+class Building {
+    constructor(buildingName, baseCps, baseCost, buttonId) {
+        this.buildingName = buildingName;
         this.baseCps = baseCps / (1000 / tickRate);
-        this.baseCost = baseCps;
+        this.baseCost = baseCost;
         this.cost = baseCost;
         this.buttonId = buttonId;
         this.amountOwned = 0;
@@ -16,34 +16,32 @@ class waterResoruce {
         this.cps = this.baseCps * this.amountOwned;
         this.cost = Math.ceil(this.cost * 1.15 ** this.amountOwned);
     }
-    
+
     buttonState() {
-        if (!this.visible){
+        if (!this.visible) {
             document.getElementById(this.buttonId).style.display = 'none';
             if (score >= this.baseCost) {
                 this.visible = true;
-                document.getElementById(this.buttonId).style.display = 'initial';
+                document.getElementById(this.buttonId).style.display =
+                    'initial';
             }
         }
-    
-    if(score < this.cost) {
-            document.getElementById(this.buttonId).disable = true;
+
+        if (score < this.cost) {
+            document.getElementById(this.buttonId).disabled = true;
         } else {
-            document.getElementById(this.buttonId).disable = false;
+            document.getElementById(this.buttonId).disabled = false;
         }
 
         document.getElementById(this.buttonId).innerHTML =
-        "buy " +
-        this.waterResorucename +
-        " (cost: $" +
-        Math.ceil(this.cost).toLocaleString() +
-        ") <br> Adds $" +
-        (this.baseCps * (1000 / tickRate)).toLocaleString() +
-        " Per secound <br> [Owned: " +
-        this.amountOwned +
-        "]";
+            'Buy ' +
+            this.buildingName +
+            ' (Cost: $' +
+            Math.ceil(this.cost).toLocaleString() +
+            ') <br> Adds $' +
+            (this.baseCps * (1000 / tickRate)).toLocaleString() +
+            ' Per Second <br> [Owned: ' +
+            this.amountOwned +
+            ']';
     }
 }
-
-    
-       
