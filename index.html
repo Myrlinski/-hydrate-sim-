@@ -3,26 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="src/Lakes.js"></script>
+        <script src="src/waterResoruce.js"></script>
         <script src="src/main.js"></script>
         <title>Hydrate Simulator</title>
     </head>
     <body>
-        <h1> Hydrate Simulator </h1>
+        <h1>Hydrate Simulator</h1>
         <h2>
             In the year 2080 the world is in despair due to the lack of water that has vanished randomly. 
             The world is looking for answers who will provide, who can find more water, and why did it disappear.
-             As we look for answers who will step on to the task. The world is running out of water... what can you do to stop it. 
+             As we look for answers who will step on to the task. The world is running out of water... what can you do to stop it.
         </h2>
 
         <h3>Score: <span class="score" id="score">0</span></h3>
 
         <button type="button" onclick="scorePlusPlus()">Click Me!</button>
 
-        <h4>Lakes:</h4>
+        <h4>Water Resoruce:</h4>
 
-        <button type="button" id="buyLakes" onclick="Lakes.purchase()">
-            Buy water
+        <button type="button" id="buyWater" onclick="water.purchase()">
+            Buy Water
+        </button>
+
+        <button type="button" id="buyPond" onclick="pond.purchase()">
+            Buy Pond
+        </button>
+
+        <button type="button" id="buyRiver" onclick="river.purchase()">
+            Buy Pond
+        </button>
+
+        <button type="button" id="buyLake" onclick="lake.purchase()">
+            Buy Pond
+        </button>
+        
         </button>
     </body>
 </html>
